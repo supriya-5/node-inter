@@ -4,6 +4,8 @@ const app=express()
 
 // const defau= require('./named&default')
 const {named}= require('./named&default')
+
+const Checking = require("./Routes/Checking")//importing
 // cors - npm i cors
 // const cors = require("cors")
 
@@ -44,6 +46,16 @@ app.get('/page2',middleware2, (req,res)=> {
 app.get('/page3',middleware2, (req,res)=> {
     res.send('page3 - - both middleware 1 and 2 applied')
 })
+
+
+
+
+app.use(express.json())
+
+
+app.use("/auth",Checking)// linking child with parent
+
+
 
 
 app.listen(9090,()=>{
