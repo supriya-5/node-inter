@@ -1,0 +1,9 @@
+function defau(req,res){
+    res.send("default exports")
+}
+function named(req,res) {
+    res.send('named exports')
+}
+
+module.exports = defau;//default export
+module.exports = {named};//named export
